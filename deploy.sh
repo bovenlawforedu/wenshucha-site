@@ -6,6 +6,9 @@
 set -e
 cd "$(dirname "$0")"
 
+# 兜底：本机 managed node 不在系统 PATH 时补上（其他机器若 npm 可用则跳过）
+command -v npm >/dev/null 2>&1 || export PATH="/Users/bowen/.workbuddy/binaries/node/versions/22.22.2/bin:$PATH"
+
 echo "[1/4] 构建子路径版本..."
 ASTRO_BASE=/wenshucha-site/ npm run build
 
