@@ -131,6 +131,23 @@ p.sec-sub{color:var(--sub); font-size:15px; max-width:680px; margin-bottom:24px;
 .faq .a{display:none; padding:0 20px 16px; color:var(--sub); font-size:14px;}
 .faq.open .a{display:block;}
 
+/* 工具卡墙（借鉴 TeachAny 工具卡片墙） */
+.toolgrid{display:grid; grid-template-columns:repeat(5,1fr); gap:12px;}
+.toolcard{background:var(--white); border:1px solid var(--line); border-radius:var(--r-lg); padding:20px 16px; display:block; color:var(--ink); box-shadow:var(--shadow); transition:border-color .15s, box-shadow .15s;}
+.toolcard:hover{text-decoration:none; border-color:var(--blue); box-shadow:0 6px 18px rgba(24,95,165,.12);}
+.toolcard .tico{width:38px; height:38px; border-radius:10px; background:var(--blue-100); color:var(--blue); display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:700; margin-bottom:12px;}
+.toolcard .tico.flag{background:var(--amber-100); color:var(--amber);}
+.toolcard .tname{font-weight:700; font-size:15px; margin-bottom:6px;}
+.toolcard .tds{font-size:12.5px; color:var(--sub); line-height:1.55; margin-bottom:10px;}
+.toolcard .tgo{font-size:13px; color:var(--blue); font-weight:600;}
+.ai-powered{text-align:center; font-size:12px; color:var(--sub); letter-spacing:.4px;}
+
+/* 证言卡（借鉴 TeachAny testimonials） */
+.tgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+.tcard{background:var(--white); border:1px solid var(--line); border-radius:var(--r-lg); padding:20px; box-shadow:var(--shadow);}
+.tcard .tq{font-size:14px; line-height:1.7; color:var(--ink); margin-bottom:12px;}
+.tcard .ta{font-size:13px; color:var(--sub); border-top:1px solid var(--line); padding-top:10px;}
+
 /* 图表 */
 .bars .row{display:flex; align-items:center; gap:12px; margin-bottom:12px; font-size:13px; color:var(--sub);}
 .bars .row .name{width:90px; text-align:right; flex-shrink:0;}
@@ -212,6 +229,8 @@ table.tbl{width:100%; border-collapse:collapse; background:#fff; font-size:14px;
   .datastrip{grid-template-columns:1fr 1fr;}
   .blogcards{grid-template-columns:1fr;}
   .steps{grid-template-columns:1fr 1fr;}
+  .toolgrid{grid-template-columns:1fr 1fr;}
+  .tgrid{grid-template-columns:1fr;}
   .hero-search h1{font-size:28px;}
   .topnav .inner{flex-wrap:wrap; height:auto; padding:10px 0; gap:10px;}
   .topnav nav{order:3; width:100%; overflow-x:auto; gap:14px;}

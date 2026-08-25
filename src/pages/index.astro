@@ -45,7 +45,7 @@ const jsonLd = [
         <div class="ld"><div class="n">+3,214</div><div class="t">今日同步判决</div></div>
         <div class="ld"><div class="n">1.6亿+</div><div class="t">文书总量</div></div>
         <div class="ld"><div class="n">1985-至今</div><div class="t">时间跨度</div></div>
-        <div class="ld"><div class="n">数十家</div><div class="t">合作机构</div></div>
+        <div class="ld"><div class="n">100%</div><div class="t">结论可回溯原文</div></div>
       </div>
     </div>
   </div>
@@ -78,16 +78,16 @@ const jsonLd = [
       </div>
       <div class="doors">
         <a class="door" href={base + 'for-lawyers/'}>
-          <div class="ico">律</div><div class="tt">诉讼律师</div><div class="ds">判例支撑 · 代理意见 · 报告交付</div><div class="go">进入 →</div>
+          <div class="ico">律</div><div class="tt">诉讼律师</div><div class="ds">接案评估 · 判例支撑 · 报告交付</div><div class="go">进入 →</div>
         </a>
         <a class="door" href={base + 'for-counsel/'}>
-          <div class="ico">务</div><div class="tt">企业法务</div><div class="ds">合同审查 · 司法倾向判断</div><div class="go">进入 →</div>
+          <div class="ico">务</div><div class="tt">企业法务</div><div class="ds">合同审查 · 争议预判 · 趋势跟踪</div><div class="go">进入 →</div>
         </a>
         <a class="door amber" href={base + 'for-gov/'}>
-          <div class="ico">政</div><div class="tt">法院政府</div><div class="ds">类案推送 · 大数据中台</div><div class="go">进入 →</div>
+          <div class="ico">政</div><div class="tt">法院政府</div><div class="ds">类案推送 · 量刑参考 · 大数据中台</div><div class="go">进入 →</div>
         </a>
         <a class="door green" href={base + 'for-devs/'}>
-          <div class="ico">数</div><div class="tt">高校厂商</div><div class="ds">语料 · API / MCP 接入</div><div class="go">进入 →</div>
+          <div class="ico">数</div><div class="tt">高校厂商</div><div class="ds">语料底座 · API / MCP 接入</div><div class="go">进入 →</div>
         </a>
       </div>
     </div>
@@ -96,29 +96,43 @@ const jsonLd = [
   <div class="section gray">
     <div class="wrap">
       <div class="center">
-        <div class="eyebrow">两大免费产品</div>
-        <h2 class="sec-title">打开就能用，不用注册</h2>
+        <div class="eyebrow">打开就能用 · 免注册</div>
+        <h2 class="sec-title">五个工具，各管一段法律工作</h2>
+        <p class="sec-sub">不是通用聊天机器人——背后是 1.6 亿裁判文书库，答案带真实案例引用与案号，可回溯原文。</p>
       </div>
-      <div class="products" style="margin-top:24px;">
-        <div class="prodcard">
-          <div class="pname">智能检索系统</div>
-          <ul>
-            <li>多维筛选树 · 几十万篇逐层收窄</li>
-            <li>结构化结果卡 · 案号法院结果一眼可见</li>
-            <li>一键检索报告 · 交付客户或存卷即用</li>
-          </ul>
-          <a class="btn btn-primary" href={base + 'case-search/'}>打开检索系统 →</a>
-        </div>
-        <div class="prodcard">
-          <div class="pname">AI 法律助手</div>
-          <ul>
-            <li>法律问答 · 答案附真实案例与案号</li>
-            <li>文书起草 · 起诉状答辩状按要素成稿</li>
-            <li>合同审查 · 智能阅卷 · 时间线证据清单</li>
-          </ul>
-          <a class="btn btn-primary" href={base + 'legal-ai/'}>免费试用 →</a>
-        </div>
+      <div class="toolgrid" style="margin-top:24px;">
+        <a class="toolcard" href={base + 'case-search/'}>
+          <div class="tico flag">检</div>
+          <div class="tname">智能检索系统</div>
+          <div class="tds">多维筛选 · 结构化结果卡 · 一键检索报告</div>
+          <div class="tgo">打开 →</div>
+        </a>
+        <a class="toolcard" href={base + 'legal-ai/'}>
+          <div class="tico">问</div>
+          <div class="tname">法律问答</div>
+          <div class="tds">检索判决库作答 · 附案例与案号</div>
+          <div class="tgo">试试 →</div>
+        </a>
+        <a class="toolcard" href={base + 'legal-ai/'}>
+          <div class="tico">写</div>
+          <div class="tname">文书起草</div>
+          <div class="tds">起诉状 · 答辩状 · 法律意见书</div>
+          <div class="tgo">试试 →</div>
+        </a>
+        <a class="toolcard" href={base + 'legal-ai/'}>
+          <div class="tico">审</div>
+          <div class="tname">合同审查</div>
+          <div class="tds">逐条标风险 · 修改建议带条款依据</div>
+          <div class="tgo">试试 →</div>
+        </a>
+        <a class="toolcard" href={base + 'legal-ai/'}>
+          <div class="tico">阅</div>
+          <div class="tname">智能阅卷</div>
+          <div class="tds">卷宗自动梳理时间线 · 争议焦点 · 证据清单</div>
+          <div class="tgo">试试 →</div>
+        </a>
       </div>
+      <p class="ai-powered" style="margin-top:14px;">AI-Powered · Free to Start · 每天免费 8 次</p>
     </div>
   </div>
 
@@ -161,6 +175,21 @@ const jsonLd = [
         <span class="logoitem">北京大学</span><span class="logoitem">清华大学</span><span class="logoitem">长江商学院</span>
         <span class="logoitem">江苏某法院</span>
       </div>
+      <div class="tgrid" style="margin-top:22px;">
+        <div class="tcard">
+          <div class="tq">"接案前输入案由，全国判赔区间几秒出来，报价心里有底了；检索报告勾选就能交付。"</div>
+          <div class="ta">王律师 · 深圳 · 民商事诉讼</div>
+        </div>
+        <div class="tcard">
+          <div class="tq">"合同审查逐条标风险还带条款依据，审一份合同从半天缩到二十分钟。"</div>
+          <div class="ta">李法务 · 某制造集团</div>
+        </div>
+        <div class="tcard">
+          <div class="tq">"类案推送帮我们快速定位相似判例，辅助办案的效率明显提升。"</div>
+          <div class="ta">赵法官 · 某基层法院</div>
+        </div>
+      </div>
+      <p class="meta-note" style="margin-top:12px; font-size:12px; color:var(--sub); text-align:center;">以上为示例证言（脱敏），真实场景以客户授权为准。</p>
     </div>
   </div>
 
