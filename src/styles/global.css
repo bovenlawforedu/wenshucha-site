@@ -131,6 +131,26 @@ p.sec-sub{color:var(--sub); font-size:15px; max-width:680px; margin-bottom:24px;
 .faq .a{display:none; padding:0 20px 16px; color:var(--sub); font-size:14px;}
 .faq.open .a{display:block;}
 
+/* 博客文章页排版 */
+.blog-article{max-width:780px; margin:0 auto; background:#fff; border:1px solid var(--line); border-radius:16px; padding:36px 42px; box-shadow:var(--shadow);}
+.blog-article .back{font-size:13px; color:var(--sub);}
+.blog-article .back:hover{color:var(--blue);}
+.blog-article .blog-desc{font-size:15px; color:var(--sub); line-height:1.8; margin-bottom:6px;}
+.blog-content{font-size:15px; line-height:1.9;}
+.blog-content h2{font-size:20px; font-weight:700; margin:30px 0 12px; padding-bottom:8px; border-bottom:1px solid var(--line);}
+.blog-content h3{font-size:16px; font-weight:700; margin:22px 0 10px;}
+.blog-content p{margin:12px 0;}
+.blog-content ul,.blog-content ol{padding-left:22px; margin:12px 0;}
+.blog-content li{margin:6px 0;}
+.blog-content table{width:100%; border-collapse:collapse; margin:16px 0; font-size:14px;}
+.blog-content th,.blog-content td{border:1px solid var(--line); padding:9px 12px; text-align:left; vertical-align:top;}
+.blog-content th{background:var(--bg); font-weight:600;}
+.blog-content strong{font-weight:700;}
+.blog-content blockquote{border-left:4px solid var(--blue); background:var(--blue-50); padding:12px 16px; border-radius:8px; margin:14px 0; color:#0C447C; font-size:14px;}
+.blog-content code{background:#eef1f5; border-radius:4px; padding:1px 6px; font-size:13px; font-family:ui-monospace,Menlo,monospace;}
+.blog-cta{margin-top:28px; padding-top:20px; border-top:1px solid var(--line); font-size:13px; color:var(--sub);}
+.blog-cta .btn{margin-top:12px;}
+
 /* 工具卡墙（借鉴 TeachAny 工具卡片墙） */
 .toolgrid{display:grid; grid-template-columns:repeat(5,1fr); gap:12px;}
 .toolcard{background:var(--white); border:1px solid var(--line); border-radius:var(--r-lg); padding:20px 16px; display:block; color:var(--ink); box-shadow:var(--shadow); transition:border-color .15s, box-shadow .15s;}

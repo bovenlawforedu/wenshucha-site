@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// 博客列表页：用 import.meta.glob 直接读 md（绕开 content collections，最可控）
+const base = import.meta.env.BASE_URL;
+const posts = Object.entries(import.meta.glob('/src/content/blog/*.md', { eager: true }))
+  .map(([path, mod]) => {
+    const f = (mod as { frontmatter: { title: string; description: string; pubDate: string; category: string } }).frontmatter;
+    return { slug: path.split('/').pop()!.replace(/\.md$/, ''), data: f };
+  })
+  .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
+const description = '类案检索、法律 AI、诉讼实务的实战干货：语义检索 vs 关键词、法院类案推送系统怎么建、律师费与违约金主张怎么落笔。';
+---
+<BaseLayout title="实务干货 - 类案检索与法律 AI | 文书查" description={description} page="blog">
+
+  <div class="hero-search" style="padding-bottom:44px;">
+    <div class="wrap">
+      <div class="eyebrow">实务干货 · 持续更新</div>
+      <h1>问题即答案，写给你直接能用</h1>
+      <p class="sub">每篇都讲清楚"为什么"和"怎么做"，数据和出处可回溯——不灌水、不写口号。</p>
+    </div>
+  </div>
+
+  <div class="section" style="border-bottom:none;">
+    <div class="wrap">
+      <div class="blogcards">
+        {
+          posts.map((post) => (
+            <a class="bc" href={base + 'blog/' + post.slug + '/'}>
+              <span style="font-size:12px; color:var(--blue);">{post.data.category} · {new Date(post.data.pubDate).toLocaleDateString('zh-CN')}</span>
+              <div class="t" style="margin-top:6px;">{post.data.title}</div>
+              <div class="d">{post.data.description}</div>
+            </a>
+          ))
+        }
+      </div>
+      <p style="font-size:12px; color:var(--sub); margin-top:20px;">共 {posts.length} 篇 · 由文书查团队基于公开裁判文书与实务经验撰写</p>
+    </div>
+  </div>
+
+</BaseLayout>

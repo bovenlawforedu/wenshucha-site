@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// 博客文章页：import.meta.glob 直接读 md，用 compiledContent 渲染（绕开 content collections）
+export function getStaticPaths() {
+  const modules = import.meta.glob('/src/content/blog/*.md', { eager: true });
+  return Object.keys(modules).map((path) => ({
+    params: { slug: path.split('/').pop()!.replace(/\.md$/, '') },
+  }));
+}
+
+const { slug } = Astro.params;
+const modules = import.meta.glob('/src/content/blog/*.md', { eager: true });
+const key = Object.keys(modules).find((p) => p.split('/').pop()!.replace(/\.md$/, '') === slug)!;
+const mod = modules[key] as {
+  frontmatter: { title: string; description: string; pubDate: string; category: string; tags?: string[]; urlOriginal?: string };
+  compiledContent: () => string;
+};
+const { frontmatter, compiledContent } = mod;
+const base = import.meta.env.BASE_URL;
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: frontmatter.title,
+    description: frontmatter.description,
+    datePublished: new Date(frontmatter.pubDate).toISOString(),
+    dateModified: new Date(frontmatter.pubDate).toISOString(),
+    publisher: { '@type': 'Organization', name: '文书查', url: 'https://www.wenshucha.com/' },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': new URL(Astro.url.pathname, Astro.site).href },
+  },
+];
+---
+<BaseLayout title={`${frontmatter.title} | 文书查`} description={frontmatter.description} page="blog" jsonLd={jsonLd}>
+
+  <div class="section" style="border-bottom:none;">
+    <div class="wrap">
+      <article class="blog-article">
+        <a class="back" href={base + 'blog/'}>← 返回博客列表</a>
+        <p class="eyebrow" style="margin-top:18px;">{frontmatter.category} · {new Date(frontmatter.pubDate).toLocaleDateString('zh-CN')}</p>
+        <h1 style="font-size:26px; font-weight:700; line-height:1.4; margin-bottom:12px;">{frontmatter.title}</h1>
+        <p class="blog-desc">{frontmatter.description}</p>
+        <div class="blog-tags" style="margin-bottom:20px;">
+          {(frontmatter.tags || []).map((t) => <span class="chip">{t}</span>)}
+        </div>
+        <div class="blog-content" set:html={compiledContent()} />
+        <div class="blog-cta">
+          <p>数据源自中国裁判文书网公开文书，经文书查结构化处理。检索结果为公开司法信息，不构成法律意见。</p>
+          <a class="btn btn-primary" href={base + 'case-search/'}>打开智能检索系统 →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+</BaseLayout>
