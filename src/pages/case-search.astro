@@ -1,0 +1,79 @@
+---
+const base = import.meta.env.BASE_URL;
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = '智能检索系统 - 1.6 亿判决库秒级定位类案 | 文书查';
+const description = '裁判文书智能检索：多维筛选树逐层收窄、结构化结果卡、命中关键词高亮、一键生成检索报告。全文不上锁，每篇可回溯裁判文书网原文。免注册试用。';
+---
+<BaseLayout title={title} description={description} page="case-search">
+
+  <div class="section" style="border-bottom:none;">
+    <div class="wrap" id="case-app">
+      <div class="eyebrow">智能检索系统 · 免注册试用</div>
+      <h1 style="font-size:28px; font-weight:700; margin-bottom:6px;">输入案由，先收窄、再定位、最后成稿</h1>
+      <p style="color:var(--sub); margin-bottom:20px;">当前为演示数据（原型阶段）。正式版支持 1.6 亿文书全量检索。</p>
+
+      <div class="searchbox" style="max-width:720px; margin:0 0 18px;">
+        <input type="text" id="cs-input" placeholder="输入案由，例如：机动车交通事故责任纠纷" aria-label="搜索案由" />
+        <button type="button" id="cs-btn">检索</button>
+      </div>
+
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:22px;">
+        <button class="fbtn active" data-quick="机动车交通事故责任纠纷">机动车交通事故</button>
+        <button class="fbtn" data-quick="劳动合同纠纷">劳动合同</button>
+        <button class="fbtn" data-quick="民间借贷纠纷">民间借贷</button>
+        <button class="fbtn" data-quick="建设工程施工合同纠纷">建设工程</button>
+        <button class="fbtn" data-quick="侵害商标权纠纷">侵害商标权</button>
+      </div>
+
+      <div style="font-size:13px; font-weight:600; margin-bottom:12px;">筛选（实时计数，演示）</div>
+      <div class="filterbar">
+        <span style="font-size:13px; color:var(--sub); margin-right:4px;">法院层级</span>
+        <button class="fbtn active" data-group="level" data-filter="全部">全部</button>
+        <button class="fbtn" data-group="level" data-filter="基层法院">基层法院</button>
+        <button class="fbtn" data-group="level" data-filter="中级法院">中级法院</button>
+        <button class="fbtn" data-group="level" data-filter="高级法院">高级法院</button>
+        <span style="font-size:13px; color:var(--sub); margin-left:16px; margin-right:4px;">审理程序</span>
+        <button class="fbtn active" data-group="prog" data-filter="全部">全部</button>
+        <button class="fbtn" data-group="prog" data-filter="一审">一审</button>
+        <button class="fbtn" data-group="prog" data-filter="二审">二审</button>
+        <button class="fbtn" data-group="prog" data-filter="再审">再审</button>
+        <span style="font-size:13px; color:var(--sub); margin-left:16px; margin-right:4px;">年份</span>
+        <button class="fbtn active" data-group="year" data-filter="全部">全部</button>
+        <button class="fbtn" data-group="year" data-filter="2025">2025</button>
+        <button class="fbtn" data-group="year" data-filter="2024">2024</button>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:10px;">
+        <span id="cs-count" style="font-size:14px; color:var(--sub);"></span>
+        <button class="btn btn-primary" id="cs-report" style="padding:10px 20px; font-size:14px;">生成检索报告（勾选用例）</button>
+      </div>
+
+      <div id="cs-empty" style="background:var(--blue-50); border-radius:12px; padding:28px; text-align:center; color:var(--blue); font-size:14px; display:none;"></div>
+      <div id="cs-list"></div>
+    </div>
+  </div>
+
+  <div class="modal-mask" id="report-modal">
+    <div class="modal">
+      <button class="close" aria-label="关闭">×</button>
+      <h3>检索报告（演示）</h3>
+      <div id="report-body"></div>
+      <div style="margin-top:16px; display:flex; gap:10px;">
+        <button class="btn btn-primary" onclick="document.getElementById('report-modal').classList.remove('show')">确认</button>
+        <button class="btn btn-ghost" onclick="document.getElementById('report-modal').classList.remove('show')">返回修改</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section gray">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">检索结果能用于呈堂吗？</div>
+        <h2 class="sec-title">全文不上锁，引证可回溯</h2>
+        <p class="sec-sub">判决书正文完整可读，保留真实案号可回溯中国裁判文书网原文核验，引证可直接用于代理意见与呈堂材料。</p>
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>

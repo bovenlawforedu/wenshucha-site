@@ -1,0 +1,59 @@
+---
+const base = import.meta.env.BASE_URL;
+const cols = [
+  {
+    title: '产品',
+    links: [
+      { label: '智能检索系统', href: base + 'case-search/' },
+      { label: 'AI 法律助手', href: base + 'legal-ai/' },
+      { label: '类案洞察', href: base + 'insight/' },
+    ],
+  },
+  {
+    title: '机构方案',
+    links: [
+      { label: '私有化部署', href: base + 'onpremise/' },
+      { label: '法院政府', href: base + 'for-gov/' },
+      { label: '律所', href: base + 'for-lawyers/' },
+      { label: '企业法务', href: base + 'for-counsel/' },
+      { label: '高校厂商', href: base + 'for-devs/' },
+    ],
+  },
+  {
+    title: '数据与开发',
+    links: [
+      { label: '数据底座', href: base + 'for-devs/' },
+      { label: 'API / MCP 文档', href: base + 'for-devs/#mcp' },
+      { label: 'SinoVerdict 海外版', href: 'https://sinoverdict.wenshucha.com/' },
+    ],
+  },
+  {
+    title: '关于',
+    links: [
+      { label: '关于我们', href: '#' },
+      { label: '商务 131-6872-7779', href: '#' },
+      { label: '数据使用协议', href: '#' },
+    ],
+  },
+];
+---
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      {cols.map((c) => (
+        <div>
+          <h4>{c.title}</h4>
+          <ul>
+            {c.links.map((l) => (
+              <li><a href={l.href} target={l.href.startsWith('http') ? '_blank' : undefined} rel={l.href.startsWith('http') ? 'noopener' : undefined}>{l.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="base">
+      <span>深圳星谱网络科技有限公司 · 粤ICP备2025437990号-2</span>
+      <span>文书查 · 裁判文书智能检索 + AI 法律助手</span>
+    </div>
+  </div>
+</footer>

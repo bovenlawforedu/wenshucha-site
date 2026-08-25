@@ -1,0 +1,114 @@
+---
+const base = import.meta.env.BASE_URL;
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = '高校厂商 - 司法数据底座与 API/MCP 接入 | 文书查';
+const description = '面向高校科研与 AI 厂商：1.6 亿裁判文书语料底座，全量打包、增量订阅、标准化 API 与 MCP Server 一行接入，覆盖搜索/详情/关联/法规/语义检索/量化预测六大接口。';
+---
+<BaseLayout title={title} description={description} page="devs">
+
+  <div class="hero-search" style="background:linear-gradient(180deg,#F0F7FD,#fff);">
+    <div class="wrap">
+      <div class="eyebrow">高校科研 · AI 厂商专用入口</div>
+      <h1>司法语料底座，一行配置接入</h1>
+      <p class="sub">1.6 亿裁判文书、字段结构化、每日同步——全量打包 / 增量订阅 / REST API / MCP Server 四种方式交付，开箱即用。</p>
+      <div class="chips">
+        <span class="chip">1.6亿+ 篇</span><span class="chip">5 大类</span><span class="chip">1985-至今</span><span class="chip">每日同步</span><span class="chip">海外版 SinoVerdict</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">数据底座</div>
+        <h2 class="sec-title">开箱即用的司法数据，不折腾清洗</h2>
+        <p class="sec-sub">数据均源自人民法院公开裁判文书，统一清洗与结构化处理，案号、法院、案由、当事人、裁判日期、正文等字段规整可用。</p>
+      </div>
+      <div class="datastrip" style="margin-top:24px;">
+        <div class="ds2"><div class="n">1.6亿+</div><div class="t">裁判文书</div></div>
+        <div class="ds2"><div class="n">5</div><div class="t">刑事/民事/行政/执行/赔偿</div></div>
+        <div class="ds2"><div class="n">7</div><div class="t">结构化字段</div></div>
+        <div class="ds2"><div class="n">每日</div><div class="t">同步更新</div></div>
+      </div>
+      <table class="tbl" style="margin-top:24px;">
+        <tr><th>字段</th><th>说明</th></tr>
+        <tr><td>案号 / 法院 / 案由</td><td>案件标识与管辖信息，规整可检索</td></tr>
+        <tr><td>省份 / 判决日期</td><td>地域与时间维度，支持切片统计</td></tr>
+        <tr><td>裁判结果 / 判决全文</td><td>结构化结果 + 完整正文，可回链原文核验</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="section gray">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">四种交付方式</div>
+        <h2 class="sec-title">按你的用法选接入方式</h2>
+      </div>
+      <div class="grid2" style="margin-top:24px;">
+        <div class="card">
+          <h3>全量打包 / 增量订阅</h3>
+          <p>适合高校科研与自建知识库：一次拿到全量语料，或按增量订阅持续同步。用于法学实证研究、司法语料训练、法律 AI 模型构建。</p>
+        </div>
+        <div class="card">
+          <h3>REST API / MCP Server</h3>
+          <p>适合法律科技产品与 AI 应用：按次计费或包年套餐，六大接口即插即用；MCP Server 一行配置接入 Claude Desktop / Cursor / Cline。</p>
+        </div>
+      </div>
+      <div class="api-grid" style="margin-top:16px;">
+        <div class="api-item"><div class="name">search_cases</div><div class="d">案件检索</div></div>
+        <div class="api-item"><div class="name">get_case_full_text</div><div class="d">全文获取</div></div>
+        <div class="api-item"><div class="name">list_relevant_statutes</div><div class="d">关联法规</div></div>
+        <div class="api-item"><div class="name">semantic_search</div><div class="d">语义检索</div></div>
+        <div class="api-item"><div class="name">quantify_outcome</div><div class="d">量化预测</div></div>
+        <div class="api-item"><div class="name">case_links</div><div class="d">案例关联</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="mcp">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">MCP Server</div>
+        <h2 class="sec-title">一行配置，让 Claude / Cursor / Cline 用上判决库</h2>
+      </div>
+      <div class="card" style="max-width:760px; margin:20px auto 0;">
+        <div style="font-size:13px; color:var(--sub); margin-bottom:8px;">配置示例：</div>
+        <div class="codeblock">
+<span class="cm"># mcp.json · Claude Desktop / Cursor / Cline</span><br />
+&#123;<br />
+&nbsp;&nbsp;"mcpServers": &#123;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"wenshucha": &#123;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "http",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"url": "https://api.wenshucha.com/mcp",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"headers": &#123; "Authorization": "Bearer YOUR_KEY" &#125;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&#125;<br />
+&nbsp;&nbsp;&#125;<br />
+&#125;
+        </div>
+        <p style="font-size:13px; color:var(--sub);">接入后即可在对话中调用 search_cases、get_case_full_text、list_relevant_statutes、quantify_outcome 等工具，答案自带案号回链。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section gray">
+    <div class="wrap">
+      <div class="grid2">
+        <div class="card">
+          <h3>高校科研</h3>
+          <p>法学实证研究、司法语料训练、法律 AI 模型构建的高质量语料来源。已服务北京大学、清华大学、长江商学院等。</p>
+        </div>
+        <div class="card">
+          <h3>企业 / AI 厂商</h3>
+          <p>法律科技产品、风控合规、智能检索与问答的底层数据支撑。已服务无讼、北大法宝、牛法网等。</p>
+          <p style="margin-top:10px; font-size:14px;">海外英文版：<a href="https://sinoverdict.wenshucha.com/">SinoVerdict →</a></p>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:28px;">
+        <a class="btn btn-primary" href={base + 'onpremise/'}>需要私有化数据？预约勘察 →</a>
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>

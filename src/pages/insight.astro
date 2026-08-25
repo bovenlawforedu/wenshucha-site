@@ -1,0 +1,63 @@
+---
+const base = import.meta.env.BASE_URL;
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = '类案洞察 - 一张图看懂一个案由 | 文书查';
+const description = '输入案由，一键生成判决结果分布、判赔区间、法院层级与地域分布图，可生成带水印的分享图。数据源自 1.6 亿裁判文书库。';
+---
+<BaseLayout title={title} description={description} page="insight">
+
+  <div class="hero-search" style="padding-bottom:44px;">
+    <div class="wrap">
+      <div class="eyebrow">类案洞察</div>
+      <h1>一张图看懂一个案由</h1>
+      <p class="sub">选择或输入案由，看全国判决结果分布、判赔区间、法院层级与地域分布——一键生成带品牌水印的分享图。</p>
+      <div id="insight-hero">
+        <div id="insight-picker" class="case-picker"></div>
+        <div class="searchbox" data-search style="max-width:520px; margin-top:16px;">
+          <input type="text" placeholder="或输入其他案由（演示收录 5 类）" aria-label="搜索案由" />
+          <button type="button">生成</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="insight-app">
+    <div class="wrap">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:6px;">
+        <h2 class="sec-title" id="insight-title" style="margin:0;"></h2>
+        <button class="btn btn-primary" id="share-btn">一键生成分享图</button>
+      </div>
+      <p style="color:var(--sub); font-size:13px; margin-bottom:14px;">数据源：中国裁判文书网公开文书（演示数据）· 不构成法律意见</p>
+      <div id="insight-box"></div>
+    </div>
+  </div>
+
+  <div class="section gray">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">从洞察到成稿</div>
+        <h2 class="sec-title">下一步：看完整类案，生成检索报告</h2>
+        <p class="sec-sub">洞察图帮你判断方向，真正写代理意见还要落到具体判例。</p>
+        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:8px;">
+          <a class="btn btn-primary" href={base + 'case-search/'}>打开智能检索 →</a>
+          <a class="btn btn-ghost" href={base + 'legal-ai/'}>用 AI 助手起草 →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-mask" id="share-modal">
+    <div class="modal" style="max-width:680px;">
+      <button class="close" aria-label="关闭">×</button>
+      <h3>分享图已生成</h3>
+      <p style="color:var(--sub); font-size:13px; margin-bottom:14px;">长按/右键保存图片，或点下方按钮下载。正式版支持一键分享到微信。</p>
+      <canvas id="share-canvas" style="width:100%; border:1px solid var(--line); border-radius:12px;"></canvas>
+      <div style="margin-top:14px; display:flex; gap:10px;">
+        <button class="btn btn-primary" id="share-download">下载图片</button>
+        <button class="btn btn-ghost" onclick="document.getElementById('share-modal').classList.remove('show')">关闭</button>
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>

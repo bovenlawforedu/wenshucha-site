@@ -1,0 +1,79 @@
+---
+const base = import.meta.env.BASE_URL;
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = '诉讼律师 - 类案检索与 AI 助理 | 文书查';
+const description = '为诉讼律师定制：接案前评估、写代理意见找支撑判例、开庭前查对方案例。1.6 亿裁判文书秒级定位，报告一键交付，结论可回溯原文。';
+---
+<BaseLayout title={title} description={description} page="lawyers">
+
+  <div class="hero-search" style="background:linear-gradient(180deg,#E6F1FB,#fff);">
+    <div class="wrap">
+      <div class="eyebrow">诉讼律师专用入口</div>
+      <h1>接案、找判例、出报告，一条链路走完</h1>
+      <p class="sub">不用再在裁判文书网一篇篇翻。1.6 亿判决库秒级定位类案，报告一键交付，每篇可回溯原文。</p>
+      <div class="searchbox" data-search>
+        <input type="text" placeholder="输入你的案由，例如：建设工程施工合同纠纷" aria-label="搜索案由" />
+        <button type="button">查类案</button>
+      </div>
+      <div class="chips">
+        <span class="chip">免注册</span><span class="chip">每天免费 8 次</span><span class="chip">检索报告可呈堂</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">律师的三大高频场景</div>
+        <h2 class="sec-title">每一步，都有工具接住</h2>
+        <p class="sec-sub">类案检索真正的瓶颈从来不是"搜不到"，而是"搜出来太多没法收敛、整理成稿费时"。针对这三个卡点设计。</p>
+      </div>
+      <div class="steps" style="margin-top:28px;">
+        <div class="step"><div class="no">01</div><h4>接案前评估</h4><p>输入案由和地域，几秒钟看全国判决倾向、常见判赔区间，判断案子接不接、怎么报价。</p></div>
+        <div class="step"><div class="no">02</div><h4>找支撑判例</h4><p>多维筛选树逐层收窄，结构化卡片一眼判断，命中关键词高亮，不用逐篇点开。</p></div>
+        <div class="step"><div class="no">03</div><h4>写代理意见</h4><p>AI 起草起诉状、答辩状、法律意见书，答案附真实案例引用与案号，可回溯原文核验。</p></div>
+        <div class="step"><div class="no">04</div><h4>开庭前查对</h4><p>查对方可能引用的案例，勾选目标案例一键生成检索报告，交付客户或存卷即用。</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section gray">
+    <div class="wrap">
+      <div class="products">
+        <div class="prodcard">
+          <div class="pname">智能检索系统</div>
+          <ul>
+            <li>案件类型 / 法院层级 / 地域 / 年份任意组合</li>
+            <li>实时聚合计数 · 点到哪算到哪</li>
+            <li>勾选案例一键生成检索报告</li>
+          </ul>
+          <a class="btn btn-primary" href={base + 'case-search/'}>打开检索系统 →</a>
+        </div>
+        <div class="prodcard">
+          <div class="pname">AI 法律助手</div>
+          <ul>
+            <li>法律问答 · 答案附真实案例与案号</li>
+            <li>文书起草 · 按案情要素成稿</li>
+            <li>智能阅卷 · 自动梳理时间线与争议焦点</li>
+          </ul>
+          <a class="btn btn-primary" href={base + 'legal-ai/'}>免费试用 →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">律所整体方案</div>
+        <h2 class="sec-title">全所都在用？私有化部署更适合你</h2>
+        <p class="sec-sub">案件涉密、内部文档不能出内网时，数据 + 模型 + 工具链全套部署进律所机房，三年服务期持续迭代。</p>
+      </div>
+      <div style="text-align:center; margin-top:8px;">
+        <a class="btn btn-amber" href={base + 'onpremise/'}>了解私有化部署 →</a>
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>

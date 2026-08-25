@@ -1,0 +1,83 @@
+---
+const base = import.meta.env.BASE_URL;
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = '企业法务 - 合同审查与司法倾向判断 | 文书查';
+const description = '为企业法务定制：合同审查逐条识别风险、高频争议场景的司法倾向判断、同类案件趋势分析。1.6 亿裁判文书支撑，每天免费 8 次。';
+---
+<BaseLayout title={title} description={description} page="counsel">
+
+  <div class="hero-search" style="background:linear-gradient(180deg,#EAF3DE,#fff);">
+    <div class="wrap">
+      <div class="eyebrow" style="color:var(--green);">企业法务专用入口</div>
+      <h1>合同风险先看清，争议来时不慌</h1>
+      <p class="sub">合同审查逐条标风险、高频争议场景看司法倾向、同类案件趋势一图掌握——1.6 亿裁判文书做你的判断底牌。</p>
+      <div class="searchbox" data-search>
+        <input type="text" placeholder="例如：劳动合同纠纷 · 经济补偿金" aria-label="搜索案由" />
+        <button type="button">查类案</button>
+      </div>
+      <div class="chips">
+        <span class="chip">合同审查</span><span class="chip">争议预判</span><span class="chip">每天免费 8 次</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow" style="color:var(--green);">法务的三大高频场景</div>
+        <h2 class="sec-title">从合同到争议，每一步有工具接住</h2>
+        <p class="sec-sub">合同纠纷、劳动争议等高频场景下，先判断同类案件的司法倾向，再决定怎么谈、怎么应。</p>
+      </div>
+      <div class="steps" style="margin-top:28px;">
+        <div class="step"><div class="no">01</div><h4>合同审查</h4><p>上传合同，AI 逐条识别风险点、给修改建议并标注依据条款，审查意见可直接回写业务部门。</p></div>
+        <div class="step"><div class="no">02</div><h4>争议预判</h4><p>同类案件法院怎么判、判赔多少、多长时间——用类案洞察先看清底牌，再定谈判策略。</p></div>
+        <div class="step"><div class="no">03</div><h4>证据与应对</h4><p>按争议焦点检索同类判例，勾选一键生成对比材料，支撑内部汇报与外部律师协同。</p></div>
+        <div class="step"><div class="no">04</div><h4>趋势跟踪</h4><p>按地域 / 年份 / 案由切片看司法政策与裁量变化，提前调整合规动作。</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section gray">
+    <div class="wrap">
+      <div class="products">
+        <div class="prodcard">
+          <div class="pname">AI 合同审查</div>
+          <ul>
+            <li>逐条识别风险点 · 标注依据条款</li>
+            <li>修改建议直接可回写</li>
+            <li>每天免费 8 次 · 免注册</li>
+          </ul>
+          <a class="btn btn-primary" href={base + 'legal-ai/'}>开始审查 →</a>
+        </div>
+        <div class="prodcard">
+          <div class="pname">司法倾向洞察</div>
+          <ul>
+            <li>判决结果分布 · 判赔区间一目了然</li>
+            <li>法院层级 / 地域分布对比</li>
+            <li>可生成带品牌水印的分享图</li>
+          </ul>
+          <a class="btn btn-primary" href={base + 'insight/'}>看洞察 →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="grid2">
+        <div class="card">
+          <h3>常见法务场景示例</h3>
+          <p style="margin-bottom:10px;">合同争议、劳动争议、应收账款、知产侵权——用同一个案由洞察快速判断区域司法倾向：</p>
+          <a href={base + 'insight/'} style="font-size:14px;">劳动合同纠纷 · 全国判赔区间 →</a>
+        </div>
+        <div class="card">
+          <h3>集团 / 多主体怎么办？</h3>
+          <p>案件量大、需要内网合规或定制知识库（本集团案例库）时，私有化部署支持权限按组织定制、专属知识库独立索引。</p>
+          <a class="btn btn-amber" href={base + 'onpremise/'} style="margin-top:12px;">了解私有化部署 →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>

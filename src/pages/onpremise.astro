@@ -1,0 +1,109 @@
+---
+const base = import.meta.env.BASE_URL;
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = '私有化部署 - 数据不出内网 | 文书查';
+const description = '为律所、法院、司法局提供裁判文书数据+法律大模型+工具链全套私有化部署。数据不出内网，满足等保三级，14-30 天交付 demo，三年服务期持续迭代。';
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: '私有化部署包含什么？', acceptedAnswer: { '@type': 'Answer', text: '数据 + 模型 + 工具链全套：1.6 亿裁判文书与法规库、微调好的法律大模型、类案检索引擎、判决要素抽取、量化预测、智能检索与 AI 助手界面、API 接口。' } },
+      { '@type': 'Question', name: '数据会出内网吗？', acceptedAnswer: { '@type': 'Answer', text: '不会。数据全量部署在客户机房，法律大模型在内网推理，完全无外网调用，满足等保三级、司法数据安全规范与律所保密义务。' } },
+      { '@type': 'Question', name: '部署要多久？要钱吗？', acceptedAnswer: { '@type': 'Answer', text: '电话/邮件预约线下勘察后，14-30 天交付演示 demo，演示阶段不收钱，Demo 通过再签合同。' } },
+    ],
+  },
+];
+---
+<BaseLayout title={title} description={description} page="onpremise" jsonLd={jsonLd}>
+
+  <div class="hero-search" style="background:linear-gradient(180deg,#FAEEDA,#fff); padding-bottom:52px;">
+    <div class="wrap">
+      <div class="eyebrow" style="color:var(--amber);">律所与政府专属 · 旗舰服务</div>
+      <h1>数据不出内网的司法 AI 全套部署</h1>
+      <p class="sub">当案件涉密、当事人敏感、内部文档不能出内网时，SaaS 不是选项。数据 + 模型 + 工具链全套私有化部署到客户机房，才是正解。</p>
+      <div class="chips">
+        <span class="chip">等保三级</span><span class="chip">数据不出内网</span><span class="chip">一次部署 · 三年迭代</span><span class="chip">演示阶段不收钱</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow" style="color:var(--amber);">安全架构</div>
+        <h2 class="sec-title">整套系统，搬进你的机房</h2>
+        <p class="sec-sub">不是数据放云端、你买账号——是 1.6 亿文书 + 大模型 + 工具链全部在你内网运行，物理隔离。</p>
+      </div>
+      <div class="prem" style="max-width:900px; margin:24px auto 0;">
+        <div class="arch">
+          <span class="a">客户内网机房</span><span class="lock">🔒</span>
+          <span class="a">1.6亿裁判文书 + 法规库</span>
+          <span class="a">法律大模型<br />（内网推理）</span>
+          <span class="a">类案检索引擎</span>
+          <span class="a">AI 助手界面</span>
+          <span class="a">API 接口</span>
+        </div>
+        <div style="font-size:13px; color:var(--amber);">无任何外网调用 · 数据日同步由我们上门/专线完成 · 权限按组织结构定制（合伙人/律师/助理/法官/书记员）</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section gray">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow" style="color:var(--amber);">为什么是私有化</div>
+        <h2 class="sec-title">三个不可替代的理由</h2>
+      </div>
+      <div class="grid3" style="margin-top:28px;">
+        <div class="card"><h3>数据不出内网</h3><p>满足等保三级、司法数据安全规范、律所保密义务。敏感卷宗与当事人信息永不接触公网。</p></div>
+        <div class="card"><h3>可定制 · 可微调</h3><p>本所历史卷宗、本院判决经验可叠加微调；客户专属知识库独立索引；权限按组织架构定制。</p></div>
+        <div class="card"><h3>一次部署 · 三年迭代</h3><p>数据 + 模型 + 部署 + 培训打包，按规模与数据范围阶梯报价。三年含数据日同步、模型升级、bug 修复、定制支持。</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow" style="color:var(--amber);">启动流程</div>
+        <h2 class="sec-title">从评估到部署，四步走</h2>
+      </div>
+      <div class="steps" style="margin-top:28px;">
+        <div class="step"><div class="no">01</div><h4>预约勘察</h4><p>电话/邮件联系，提供主体资质与用户规模，1 个工作日内响应。</p></div>
+        <div class="step"><div class="no">02</div><h4>评估方案</h4><p>评估数据范围、硬件要求与部署环境，输出初步方案。</p></div>
+        <div class="step"><div class="no">03</div><h4>交付 demo</h4><p>14-30 天交付演示 demo，演示阶段不收钱。</p></div>
+        <div class="step"><div class="no">04</div><h4>正式部署</h4><p>决策后部署正式版，三年服务期持续迭代。</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section gray" id="contact">
+    <div class="wrap">
+      <div class="grid2">
+        <div>
+          <div class="eyebrow" style="color:var(--amber);">预约勘察</div>
+          <h2 class="sec-title">1 个工作日内响应</h2>
+          <p class="sec-sub">留下单位信息，商务团队会联系你安排线下勘察与 demo。演示阶段不收钱，Demo 通过再签合同。</p>
+          <div style="margin-top:18px; font-size:14px; color:var(--sub);">
+            <p>商务 Jack · 131 6872 7779</p>
+            <p style="margin-top:4px;">chenjiaxin@wenshucha.com</p>
+          </div>
+        </div>
+        <div class="card">
+          <form id="contact-form">
+            <div class="field"><label>单位 / 律所名称</label><input type="text" required placeholder="例如：广东某某律师事务所" /></div>
+            <div class="field"><label>主体资质</label><select required><option value="">选择类型</option><option>律所执业证</option><option>政府文件号</option><option>其他</option></select></div>
+            <div class="field"><label>大致用户规模</label><input type="text" required placeholder="例如：120 人（合伙人 12 / 律师 80 / 助理 28）" /></div>
+            <div class="field"><label>场景</label><select required><option value="">选择场景</option><option>律所内部</option><option>法院辅助</option><option>司法局/政法委大数据中台</option></select></div>
+            <div class="field"><label>联系方式</label><input type="text" required placeholder="手机 / 邮箱" /></div>
+            <button type="submit" class="btn btn-amber" style="width:100%;">提交勘察申请</button>
+            <div class="ok-box" id="form-ok">已收到申请。商务团队将在 1 个工作日内联系你。演示阶段不收钱，Demo 通过再签合同。</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>

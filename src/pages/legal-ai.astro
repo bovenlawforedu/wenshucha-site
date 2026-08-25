@@ -1,0 +1,69 @@
+---
+const base = import.meta.env.BASE_URL;
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'AI 法律助手 - 问答·起草·审查·阅卷 | 文书查';
+const description = 'AI 法律助手四大模组：法律问答（答案附真实案例引用与案号）、文书起草、合同审查、智能阅卷。接自建 1.6 亿裁判文书库，每天免费 8 次，无需注册。';
+---
+<BaseLayout title={title} description={description} page="legal-ai">
+
+  <div class="hero-search" style="padding-bottom:48px;">
+    <div class="wrap">
+      <div class="eyebrow">AI 法律助手 · 每天免费 8 次</div>
+      <h1>不是通用聊天机器人，是接了判决库的法律助理</h1>
+      <p class="sub">答案带真实案例引用与案号，可回溯原文核验——法律场景，不能核验的答案不可用。打开即用，无需注册。</p>
+      <div class="chips">
+        <span class="chip">法律问答</span><span class="chip">文书起草</span><span class="chip">合同审查</span><span class="chip">智能阅卷</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="products">
+        <div class="prodcard">
+          <div class="pname">法律问答</div>
+          <p style="font-size:14px; color:var(--sub);">提问直接检索判决库作答，附案例引用与案号，不是凭空生成。</p>
+        </div>
+        <div class="prodcard">
+          <div class="pname">文书起草</div>
+          <p style="font-size:14px; color:var(--sub);">起诉状、答辩状、法律意见书等常用文书，按案情要素成稿。</p>
+        </div>
+        <div class="prodcard">
+          <div class="pname">合同审查</div>
+          <p style="font-size:14px; color:var(--sub);">逐条识别风险点、给修改建议，标注依据条款。</p>
+        </div>
+        <div class="prodcard">
+          <div class="pname">智能阅卷</div>
+          <p style="font-size:14px; color:var(--sub);">上传卷宗自动梳理时间线、争议焦点与证据清单。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section gray">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">示例对话</div>
+        <h2 class="sec-title">答案长这样：附案例、带案号、可回溯</h2>
+      </div>
+      <div class="chat" style="margin-top:24px;">
+        <div class="msg user">
+          <div class="ava">你</div>
+          <div class="bubble">民间借贷中，只有转账凭证没有借条，法院会怎么认定？</div>
+        </div>
+        <div class="msg ai">
+          <div class="ava">AI</div>
+          <div class="bubble">
+            仅凭转账凭证起诉的，若被告抗辩转账系偿还之前借款或其他债务，被告应提供相应证据证明；被告不能证明的，一般按民间借贷关系处理（举证责任在被告）。
+            <span class="cite">参考案例：(2025)粤03民终7765号 · 广东省深圳市中级人民法院 · 2025-07-08<br />回溯原文 → wenshu.court.gov.cn（演示）</span>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:24px;">
+        <a class="btn btn-primary" href={base + 'case-search/'}>开始免费试用 →</a>
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>

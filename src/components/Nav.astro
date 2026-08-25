@@ -1,0 +1,22 @@
+---
+const { active = '' } = Astro.props as { active?: string };
+const base = import.meta.env.BASE_URL;
+const links = [
+  { href: base + 'case-search/', label: '检索系统', key: 'case-search' },
+  { href: base + 'legal-ai/', label: 'AI 助手', key: 'legal-ai' },
+  { href: base + 'insight/', label: '类案洞察', key: 'insight' },
+  { href: base + 'onpremise/', label: '私有化部署', key: 'onpremise' },
+  { href: base + 'for-gov/', label: '法院政府', key: 'gov' },
+];
+---
+<header class="topnav">
+  <div class="wrap inner">
+    <a class="logo" href={base}>文书查<small>1.6亿判决库</small></a>
+    <nav>
+      {links.map((l) => (
+        <a href={l.href} data-nav={l.key} class:list={{ active: active === l.key }}>{l.label}</a>
+      ))}
+    </nav>
+    <a class="btn btn-primary cta" href={base + 'case-search/'}>免费试用</a>
+  </div>
+</header>

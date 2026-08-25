@@ -1,0 +1,91 @@
+---
+const base = import.meta.env.BASE_URL;
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = '法院政府 - 类案推送与司法大数据中台 | 文书查';
+const description = '为法院、司法局、政法委定制：类案推送、量刑参考、文书辅助生成、司法大数据中台。数据+模型+工具链私有化部署，数据不出内网，满足等保三级。';
+---
+<BaseLayout title={title} description={description} page="gov">
+
+  <div class="hero-search" style="background:linear-gradient(180deg,#FAEEDA,#fff);">
+    <div class="wrap">
+      <div class="eyebrow" style="color:var(--amber);">法院 · 司法局 · 政法委专用入口</div>
+      <h1>司法大数据中台，数据不出内网</h1>
+      <p class="sub">1.6 亿裁判文书 + 法规库一次部署进客户机房，法律大模型在内网推理，完全无外网调用。满足等保三级与司法数据安全规范。</p>
+      <a class="btn btn-amber" href={base + 'onpremise/'} style="margin-top:6px;">预约线下勘察 →</a>
+      <div class="chips">
+        <span class="chip">等保三级</span><span class="chip">数据不出内网</span><span class="chip">14-30 天交付 demo</span><span class="chip">演示阶段不收钱</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow" style="color:var(--amber);">三类典型部署场景</div>
+        <h2 class="sec-title">按你的单位形态，一套系统三种用法</h2>
+      </div>
+      <div class="grid3" style="margin-top:28px;">
+        <div class="card">
+          <h3>法院</h3>
+          <ul style="padding-left:18px; font-size:14px; color:var(--sub);">
+            <li style="margin:6px 0;">类案推送：办案时自动推送相似案例</li>
+            <li style="margin:6px 0;">量刑参考：基于历史判决的刑期参考</li>
+            <li style="margin:6px 0;">文书辅助生成：判决书起草提速</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>司法局 / 政法委</h3>
+          <ul style="padding-left:18px; font-size:14px; color:var(--sub);">
+            <li style="margin:6px 0;">司法大数据分析：区域案件态势研判</li>
+            <li style="margin:6px 0;">数字法治中台：数据底座统一供给</li>
+            <li style="margin:6px 0;">监督辅助：类案同判倾向监测</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>律所（涉密场景）</h3>
+          <ul style="padding-left:18px; font-size:14px; color:var(--sub);">
+            <li style="margin:6px 0;">从合伙人到助理的全所 AI 助手</li>
+            <li style="margin:6px 0;">本所历史卷宗叠加微调</li>
+            <li style="margin:6px 0;">权限按组织结构定制</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section gray">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow" style="color:var(--amber);">安全可视化</div>
+        <h2 class="sec-title">数据不出内网，一眼看懂</h2>
+        <p class="sec-sub">不是云端 SaaS，是整套系统搬进你的机房——这一点用架构图说清楚，比十行文字有用。</p>
+      </div>
+      <div class="prem" style="max-width:860px; margin:24px auto 0;">
+        <div class="arch">
+          <span class="a">你的内网机房</span><span class="lock">🔒</span><span class="a">1.6亿文书库</span><span class="a">法规库</span><span class="a">法律大模型（内网推理）</span><span class="a">检索引擎 + AI 界面</span><span class="a">API 接口</span>
+        </div>
+        <div style="font-size:13px; color:var(--amber);">
+          数据全量部署在客户机房 · 模型内网推理 · 无任何外网调用 · 三年服务期含数据日同步与模型升级
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="grid2">
+        <div class="card">
+          <h3>从评估到部署，1 个工作日内响应</h3>
+          <p style="margin-bottom:14px;">提供主体资质（律所执业证 / 政府文件号）+ 大致用户规模，我们提供 demo 邀请与初步方案。</p>
+          <a class="btn btn-amber" href={base + 'onpremise/'}>填写勘察申请 →</a>
+        </div>
+        <div class="card">
+          <h3>演示阶段不收钱</h3>
+          <p>电话/邮件预约线下勘察 → 评估范围与硬件要求 → 14-30 天交付演示 demo → 决策后部署正式版。Demo 通过再签合同。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>

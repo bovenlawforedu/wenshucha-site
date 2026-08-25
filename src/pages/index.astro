@@ -1,0 +1,195 @@
+---
+const base = import.meta.env.BASE_URL;
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = '文书查 - 裁判文书智能检索 + AI 法律助手 | 1.6 亿判决库免费试用';
+const description = '文书查提供裁判文书智能检索与 AI 法律助手：基于自建 1.6 亿+判决库，秒级定位类案、一键生成检索报告；AI 支持问答、起草、合同审查、智能阅卷，结论可回溯原文。免注册试用，每天免费 8 次。';
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: '文书查',
+    url: 'https://www.wenshucha.com/',
+    potentialAction: { '@type': 'SearchAction', target: 'https://www.wenshucha.com/case-search/?q={query}', 'query-input': 'required name=query' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: '文书查的数据从哪里来？', acceptedAnswer: { '@type': 'Answer', text: '数据均源自人民法院公开裁判文书，经统一清洗与结构化处理，合法、真实、可追溯。' } },
+      { '@type': 'Question', name: '每天免费几次？要注册吗？', acceptedAnswer: { '@type': 'Answer', text: 'AI 法律助手每天免费 8 次，无需注册即可试用。' } },
+      { '@type': 'Question', name: '私有化部署怎么启动？', acceptedAnswer: { '@type': 'Answer', text: '提供主体资质与用户规模，1 个工作日内响应，14-30 天交付演示 demo，演示阶段不收钱。' } },
+    ],
+  },
+];
+---
+<BaseLayout title={title} description={description} page="home" enAlternate={true} jsonLd={jsonLd}>
+
+  <div class="hero-search">
+    <div class="wrap">
+      <h1>输入案由，秒级看到全国类案</h1>
+      <p class="sub">1.6 亿篇裁判文书 · 每条结论可回溯原文 · 免注册</p>
+      <div class="searchbox" data-search>
+        <input type="text" placeholder="例如：机动车交通事故责任纠纷 · 赔偿区间" aria-label="搜索案由" />
+        <button type="button">查类案</button>
+      </div>
+      <div class="chips">
+        <span class="chip">免注册</span><span class="chip">每天免费 8 次</span><span class="chip">结论可回溯原文</span><span class="chip">全文不上锁</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="livedata">
+        <div class="ld"><div class="n">+3,214</div><div class="t">今日同步判决</div></div>
+        <div class="ld"><div class="n">1.6亿+</div><div class="t">文书总量</div></div>
+        <div class="ld"><div class="n">1985-至今</div><div class="t">时间跨度</div></div>
+        <div class="ld"><div class="n">数十家</div><div class="t">合作机构</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section gray">
+    <div class="wrap" id="insight-preview">
+      <div class="center">
+        <div class="eyebrow">可视化 · 可分享</div>
+        <h2 class="sec-title">类案洞察：一张图看懂一个案由</h2>
+        <p class="sec-sub">选一个案由，看全国判决结果分布、判赔区间与法院层级——可一键生成带水印的分享图，发给客户或同行。</p>
+      </div>
+      <div id="insight-picker" class="case-picker" style="margin-bottom:18px;"></div>
+      <div class="card" style="max-width:760px; margin:0 auto;">
+        <div id="insight-label" style="font-weight:600; font-size:15px; margin-bottom:14px;"></div>
+        <div id="insight-bars" class="bars"></div>
+        <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn btn-primary" id="insight-go" href={base + 'insight/'}>看完整报告 →</a>
+          <a class="btn btn-ghost" href={base + 'insight/'}>一键生成分享图</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">按你的身份进入</div>
+        <h2 class="sec-title">你属于哪类用户？</h2>
+        <p class="sec-sub">每条路都为你定制了入口、文案与工具，不绕路。</p>
+      </div>
+      <div class="doors">
+        <a class="door" href={base + 'for-lawyers/'}>
+          <div class="ico">律</div><div class="tt">诉讼律师</div><div class="ds">判例支撑 · 代理意见 · 报告交付</div><div class="go">进入 →</div>
+        </a>
+        <a class="door" href={base + 'for-counsel/'}>
+          <div class="ico">务</div><div class="tt">企业法务</div><div class="ds">合同审查 · 司法倾向判断</div><div class="go">进入 →</div>
+        </a>
+        <a class="door amber" href={base + 'for-gov/'}>
+          <div class="ico">政</div><div class="tt">法院政府</div><div class="ds">类案推送 · 大数据中台</div><div class="go">进入 →</div>
+        </a>
+        <a class="door green" href={base + 'for-devs/'}>
+          <div class="ico">数</div><div class="tt">高校厂商</div><div class="ds">语料 · API / MCP 接入</div><div class="go">进入 →</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section gray">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">两大免费产品</div>
+        <h2 class="sec-title">打开就能用，不用注册</h2>
+      </div>
+      <div class="products" style="margin-top:24px;">
+        <div class="prodcard">
+          <div class="pname">智能检索系统</div>
+          <ul>
+            <li>多维筛选树 · 几十万篇逐层收窄</li>
+            <li>结构化结果卡 · 案号法院结果一眼可见</li>
+            <li>一键检索报告 · 交付客户或存卷即用</li>
+          </ul>
+          <a class="btn btn-primary" href={base + 'case-search/'}>打开检索系统 →</a>
+        </div>
+        <div class="prodcard">
+          <div class="pname">AI 法律助手</div>
+          <ul>
+            <li>法律问答 · 答案附真实案例与案号</li>
+            <li>文书起草 · 起诉状答辩状按要素成稿</li>
+            <li>合同审查 · 智能阅卷 · 时间线证据清单</li>
+          </ul>
+          <a class="btn btn-primary" href={base + 'legal-ai/'}>免费试用 →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="prem">
+        <div class="pt">涉密机构专属：数据 + 模型 + 工具链，全套进你的机房</div>
+        <div class="pd">满足等保三级 · 数据不出内网 · 14-30 天交付 demo · 演示阶段不收钱</div>
+        <div class="arch">
+          <span class="a">客户内网</span><span class="lock">🔒</span><span class="a">1.6亿文书库</span><span class="a">法律大模型</span><span class="a">检索引擎</span><span class="a">AI 助手界面</span>
+        </div>
+        <a class="btn btn-amber" href={base + 'onpremise/'}>预约勘察（1 个工作日响应）</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section gray">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">数据底座</div>
+        <h2 class="sec-title">合法 · 权威 · 开箱即用的司法数据</h2>
+      </div>
+      <div class="datastrip" style="margin-top:24px;">
+        <div class="ds2"><div class="n">1.6亿+</div><div class="t">裁判文书</div></div>
+        <div class="ds2"><div class="n">5</div><div class="t">大类全覆盖</div></div>
+        <div class="ds2"><div class="n">1985-</div><div class="t">至今可查</div></div>
+        <div class="ds2"><div class="n">每日</div><div class="t">同步更新</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">信任背书</div>
+        <h2 class="sec-title">自 2017 年，已服务数十家司法领域客户</h2>
+      </div>
+      <div class="logos" style="margin-top:20px;">
+        <span class="logoitem">无讼</span><span class="logoitem">北大法宝</span><span class="logoitem">牛法网</span>
+        <span class="logoitem">北京大学</span><span class="logoitem">清华大学</span><span class="logoitem">长江商学院</span>
+        <span class="logoitem">江苏某法院</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section gray">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">实务干货</div>
+        <h2 class="sec-title">问题即答案，持续更新</h2>
+      </div>
+      <div class="blogcards" style="margin-top:24px;">
+        <a class="bc" href="#"><div class="t">类案检索：语义检索 vs 关键词检索</div><div class="d">什么时候该用哪种，怎么选</div></a>
+        <a class="bc" href="#"><div class="t">法院类案推送系统怎么建</div><div class="d">给政法系统的技术拆解</div></a>
+        <a class="bc" href="#"><div class="t">律师费与违约金主张怎么起草</div><div class="d">高频实务问题，直接可引</div></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">常见问题</div>
+        <h2 class="sec-title">一次说清</h2>
+      </div>
+      <div class="faqbox" style="margin-top:20px;">
+        <div class="faq"><div class="q">文书查的数据从哪里来？<span class="mark">+</span></div><div class="a">数据均源自人民法院公开裁判文书（中国裁判文书网及各级法院公开渠道），经统一清洗与结构化处理，合法、真实、可追溯。</div></div>
+        <div class="faq"><div class="q">每天免费几次？要注册吗？<span class="mark">+</span></div><div class="a">AI 法律助手每天免费 8 次，检索系统免注册即可试用，无需留手机号。</div></div>
+        <div class="faq"><div class="q">私有化部署怎么启动？<span class="mark">+</span></div><div class="a">提供主体资质（律所执业证 / 政府文件号）与大致用户规模，1 个工作日内响应，14-30 天交付演示 demo，演示阶段不收钱。</div></div>
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>
