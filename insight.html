@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>类案洞察 - 一张图看懂一个案由 | 文书查</title>
+<meta name="description" content="文书查类案洞察：选择案由，看全国判决结果分布、判赔区间、法院层级与地域分布，一键生成带品牌水印的分享图。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topnav">
+  <div class="wrap inner">
+    <a class="logo" href="index.html">
+      <span class="seal">文</span>
+      <span class="name">文书查<small>1.6亿判决库</small></span>
+    </a>
+    <nav>
+      <a href="case-search.html">检索系统</a>
+      <a href="legal-ai.html">AI 助手</a>
+      <a href="insight.html" class="active">类案洞察</a>
+      <a href="onpremise.html">私有化部署</a>
+      <a href="for-gov.html">法院政府</a>
+    </nav>
+    <a class="btn btn-gold cta" href="case-search.html">免费试用</a>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:64px">
+  <div class="wrap center">
+    <span class="badge">类案洞察</span>
+    <h1 style="font-size:44px;margin-top:20px">一张图看懂一个案由</h1>
+    <p class="sec-sub" style="margin:16px auto 0">选择或输入案由，看全国判决结果分布、判赔区间、法院层级与地域分布——一键生成带品牌水印的分享图。</p>
+    <form class="searchbox" style="margin:28px auto 0;max-width:680px" action="#" onsubmit="return false">
+      <input type="text" placeholder="输入案由，如：劳动合同纠纷" aria-label="案由">
+      <button type="submit">生成</button>
+    </form>
+    <div class="filterbar" style="justify-content:center;margin-top:20px">
+      <button class="fbtn active">机动车交通事故</button>
+      <button class="fbtn">劳动合同纠纷</button>
+      <button class="fbtn">民间借贷</button>
+      <button class="fbtn">建设工程</button>
+    </div>
+    <p style="font-size:12px;color:var(--text-dim);margin-top:16px">数据源：中国裁判文书网公开文书（演示数据）· 不构成法律意见</p>
+  </div>
+</section>
+
+<!-- ===== 洞察报告 ===== -->
+<section class="section paper" style="padding-top:56px">
+  <div class="wrap" style="max-width:860px">
+    <div class="share-preview" style="padding:34px 38px 28px">
+      <div class="shead">
+        <span class="brand">文书查 · 类案洞察</span>
+        <span class="seal" style="width:34px;height:34px;font-size:17px;opacity:.9">文</span>
+      </div>
+      <h3 style="font-size:26px">机动车交通事故责任纠纷</h3>
+      <div class="sstats" style="margin-bottom:22px">
+        <div class="sstat"><b>¥8,000–32万</b><span>判赔区间</span></div>
+        <div class="sstat"><b>42%</b><span>支持赔偿率</span></div>
+        <div class="sstat"><b>31 省</b><span>覆盖省份</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+        <div>
+          <p style="font-size:13px;color:var(--sub);margin-bottom:12px">判决结果分布</p>
+          <div class="bars">
+            <div class="row"><span class="name">支持赔偿</span><div class="track"><div class="fill" style="width:42%;background:linear-gradient(90deg,#D9B878,#B5853F)"></div></div><span class="val">42%</span></div>
+            <div class="row"><span class="name">部分支持</span><div class="track"><div class="fill" style="width:28%;background:linear-gradient(90deg,#5B9BD5,#3D6FA8)"></div></div><span class="val">28%</span></div>
+            <div class="row"><span class="name">驳回</span><div class="track"><div class="fill" style="width:18%;background:#9EA8B5"></div></div><span class="val">18%</span></div>
+            <div class="row"><span class="name">撤诉</span><div class="track"><div class="fill" style="width:12%;background:#CDD2D9"></div></div><span class="val">12%</span></div>
+          </div>
+        </div>
+        <div>
+          <p style="font-size:13px;color:var(--sub);margin-bottom:12px">法院层级分布</p>
+          <div class="bars">
+            <div class="row"><span class="name">基层法院</span><div class="track"><div class="fill" style="width:64%;background:linear-gradient(90deg,#D9B878,#B5853F)"></div></div><span class="val">64%</span></div>
+            <div class="row"><span class="name">中级法院</span><div class="track"><div class="fill" style="width:28%;background:linear-gradient(90deg,#5B9BD5,#3D6FA8)"></div></div><span class="val">28%</span></div>
+            <div class="row"><span class="name">高级法院</span><div class="track"><div class="fill" style="width:6%;background:#9EA8B5"></div></div><span class="val">6%</span></div>
+            <div class="row"><span class="name">最高法院</span><div class="track"><div class="fill" style="width:2%;background:#CDD2D9"></div></div><span class="val">2%</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:26px">
+        <button class="btn btn-gold" onclick="document.getElementById('shareModal').classList.add('show')">一键生成分享图</button>
+      </div>
+      <div class="sfoot"><span>数据来源：人民法院公开裁判文书</span><span>生成于 2026-08-25</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 从洞察到成稿 ===== -->
+<section class="section dark">
+  <div class="wrap center">
+    <span class="eyebrow">从洞察到成稿</span>
+    <h2 class="sec-title" style="font-size:30px">下一步：看完整类案，生成检索报告</h2>
+    <p class="sec-sub" style="margin:14px auto 0">洞察图帮你判断方向，真正写代理意见还要落到具体判例。</p>
+    <div style="display:flex;gap:14px;justify-content:center;margin-top:30px;flex-wrap:wrap">
+      <a class="btn btn-gold" href="case-search.html">打开智能检索 →</a>
+      <a class="btn btn-outline-gold" href="legal-ai.html">用 AI 助手起草 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 分享图弹窗 ===== -->
+<div class="modal-mask" id="shareModal">
+  <div class="modal" style="max-width:520px">
+    <button class="close" onclick="this.parentNode.parentNode.classList.remove('show')">×</button>
+    <h3>分享图已生成</h3>
+    <p style="color:var(--sub);font-size:14px;margin-bottom:16px">长按/右键保存图片，或点下方按钮下载。正式版支持一键分享到微信。</p>
+    <div style="text-align:center;padding:16px 0">
+      <div class="share-preview" style="max-width:420px;margin:0 auto;text-align:left">
+        <div class="shead"><span class="brand">文书查 · 类案洞察</span><span class="seal" style="width:30px;height:30px;font-size:15px;opacity:.9">文</span></div>
+        <h3 style="font-size:20px">机动车交通事故责任纠纷</h3>
+        <div class="sstats"><div class="sstat"><b>42%</b><span>支持率</span></div><div class="sstat"><b>¥8千-32万</b><span>判赔</span></div><div class="sstat"><b>31省</b><span>覆盖</span></div></div>
+      </div>
+    </div>
+    <div style="display:flex;gap:12px;margin-top:16px;justify-content:center">
+      <button class="btn btn-outline" onclick="this.closest('.modal-mask').classList.remove('show')">关闭</button>
+      <button class="btn btn-gold" onclick="document.getElementById('okShare').classList.add('show')">下载图片</button>
+    </div>
+    <div class="ok-box" id="okShare">已开始下载（演示）。正式版支持高清 PNG 导出与微信一键分享。</div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <a class="logo" href="index.html"><span class="seal">文</span><span class="name" style="font-size:18px">文书查</span></a>
+        <p class="desc">裁判文书智能检索
++ AI 法律助手</p>
+        <p>商务 131-6872-7779</p>
+      </div>
+      <div class="col"><h4>产品</h4><ul><li><a href="case-search.html">智能检索系统</a></li><li><a href="legal-ai.html">AI 法律助手</a></li><li><a href="insight.html">类案洞察</a></li></ul></div>
+      <div class="col"><h4>机构方案</h4><ul><li><a href="onpremise.html">私有化部署</a></li><li><a href="for-gov.html">法院政府</a></li><li><a href="for-lawyers.html">律所</a></li><li><a href="for-counsel.html">企业法务</a></li><li><a href="for-devs.html">高校厂商</a></li></ul></div>
+      <div class="col"><h4>数据与开发</h4><ul><li><a href="for-devs.html">数据底座</a></li><li><a href="for-devs.html#mcp">API / MCP 文档</a></li><li><a href="https://sinoverdict.wenshucha.com/" target="_blank" rel="noopener">SinoVerdict 海外版</a></li></ul></div>
+      <div class="col"><h4>关于</h4><ul><li><a href="#">关于我们</a></li><li><a href="#">数据使用协议</a></li><li><a href="onpremise.html">联系我们</a></li></ul></div>
+    </div>
+    <div class="base">
+      <span>深圳星谱网络科技有限公司 · 粤ICP备2025437990号-2</span>
+      <span>文书查 · 裁判文书智能检索 + AI 法律助手</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.fbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.fbtn').forEach(function(x){x.classList.remove('active')});
+    this.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

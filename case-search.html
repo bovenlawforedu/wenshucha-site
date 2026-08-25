@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智能检索系统 - 1.6 亿判决库秒级定位类案 | 文书查</title>
+<meta name="description" content="文书查智能检索系统：基于 1.6 亿判决库的多维筛选与语义检索，秒级定位类案，一键生成检索报告，免注册试用。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topnav">
+  <div class="wrap inner">
+    <a class="logo" href="index.html">
+      <span class="seal">文</span>
+      <span class="name">文书查<small>1.6亿判决库</small></span>
+    </a>
+    <nav>
+      <a href="case-search.html" class="active">检索系统</a>
+      <a href="legal-ai.html">AI 助手</a>
+      <a href="insight.html">类案洞察</a>
+      <a href="onpremise.html">私有化部署</a>
+      <a href="for-gov.html">法院政府</a>
+    </nav>
+    <a class="btn btn-gold cta" href="case-search.html">免费试用</a>
+  </div>
+</header>
+
+<!-- ===== 检索 Hero ===== -->
+<section class="hero" style="padding-bottom:64px">
+  <div class="wrap">
+    <div class="center">
+      <span class="badge">智能检索系统 · 免注册试用</span>
+      <h1 style="font-size:44px;margin-top:20px">输入案由，先收窄、再定位、最后成稿</h1>
+      <p class="sec-sub" style="margin:14px auto 0">当前为演示数据（原型阶段）。正式版支持 1.6 亿文书全量检索。</p>
+    </div>
+    <form class="searchbox" style="margin:28px auto 0;max-width:680px" action="#" onsubmit="return false">
+      <input type="text" placeholder="输入案由，如：机动车交通事故责任纠纷" aria-label="搜索案由">
+      <button type="submit">检索</button>
+    </form>
+    <div class="filterbar" style="justify-content:center;margin-top:20px">
+      <button class="fbtn active">机动车交通事故</button>
+      <button class="fbtn">劳动合同</button>
+      <button class="fbtn">民间借贷</button>
+      <button class="fbtn">建设工程</button>
+      <button class="fbtn">侵害商标权</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 检索主区 ===== -->
+<section class="section paper" style="padding-top:56px">
+  <div class="wrap" style="display:grid;grid-template-columns:240px 1fr;gap:28px">
+    <!-- 筛选器 -->
+    <aside>
+      <p style="font-weight:600;font-size:13px;color:var(--sub);margin-bottom:10px">筛选（实时计数，演示）</p>
+      <div class="field"><label>法院层级</label>
+        <select><option>全部</option><option>基层法院</option><option>中级法院</option><option>高级法院</option></select>
+      </div>
+      <div class="field"><label>审理程序</label>
+        <select><option>全部</option><option>一审</option><option>二审</option><option>再审</option></select>
+      </div>
+      <div class="field"><label>年份</label>
+        <select><option>全部</option><option>2025</option><option>2024</option><option>2023</option></select>
+      </div>
+      <button class="btn btn-gold" style="width:100%" onclick="document.getElementById('reportModal').classList.add('show')">生成检索报告</button>
+      <p style="font-size:12px;color:var(--faint);margin-top:10px">勾选用例后生成报告</p>
+    </aside>
+    <!-- 结果列表 -->
+    <div>
+      <p style="color:var(--sub);font-size:13px;margin-bottom:14px">共 <b style="color:var(--primary)">1,284</b> 条结果 · 演示数据</p>
+
+      <div class="resultcard">
+        <div class="top">
+          <span class="case-title">深圳市某公司与王某机动车交通事故责任纠纷二审民事判决书</span>
+          <input type="checkbox" title="勾选加入报告" style="width:18px;height:18px;accent-color:var(--gold)">
+        </div>
+        <div class="meta"><span>(2025)粤03民终7765号</span><span>广东省深圳市中级人民法院</span><span>2025-07-08</span><span>二审</span></div>
+        <div class="snippet">肇事方对损害发生有过错的，应承担相应赔偿责任。关于<mark>误工费</mark>的计算标准，一审认定以<mark>上一年度城镇单位就业人员平均工资</mark>为基数……</div>
+        <div class="foot"><span class="tag">部分支持</span><a href="#" style="color:var(--primary);font-size:13px">回溯原文 →</a></div>
+      </div>
+
+      <div class="resultcard">
+        <div class="top">
+          <span class="case-title">李某诉张某机动车交通事故责任纠纷一审民事判决书</span>
+          <input type="checkbox" title="勾选加入报告" style="width:18px;height:18px;accent-color:var(--gold)">
+        </div>
+        <div class="meta"><span>(2024)京0108民初28531号</span><span>北京市海淀区人民法院</span><span>2024-12-19</span><span>一审</span></div>
+        <div class="snippet">经核算，原告因本次事故产生的<mark>医疗费</mark>、<mark>护理费</mark>、误工费等各项损失共计人民币 128,340 元，由被告保险公司在交强险及商业三者险限额内先行赔付……</div>
+        <div class="foot"><span class="tag">支持赔偿</span><a href="#" style="color:var(--primary);font-size:13px">回溯原文 →</a></div>
+      </div>
+
+      <div class="resultcard">
+        <div class="top">
+          <span class="case-title">陈某与某物流公司机动车交通事故责任纠纷再审审查民事裁定书</span>
+          <input type="checkbox" title="勾选加入报告" style="width:18px;height:18px;accent-color:var(--gold)">
+        </div>
+        <div class="meta"><span>(2023)沪0115民初90212号</span><span>上海市浦东新区人民法院</span><span>2023-06-30</span><span>一审</span></div>
+        <div class="snippet">关于<mark>精神损害抚慰金</mark>的主张，鉴于事故对原告造成十级伤残，酌定支持 5,000 元；后续治疗费可待实际发生后另行主张……</div>
+        <div class="foot"><span class="tag">部分支持</span><a href="#" style="color:var(--primary);font-size:13px">回溯原文 →</a></div>
+      </div>
+
+      <div class="resultcard">
+        <div class="top">
+          <span class="case-title">刘某与赵某机动车交通事故责任纠纷一审民事判决书</span>
+          <input type="checkbox" title="勾选加入报告" style="width:18px;height:18px;accent-color:var(--gold)">
+        </div>
+        <div class="meta"><span>(2024)粤0106民初18220号</span><span>广东省广州市天河区人民法院</span><span>2024-09-12</span><span>一审</span></div>
+        <div class="snippet">被告抗辩称转账系偿还之前借款，但未能提交相应证据证明，应承担不利后果，本院认定双方成立<mark>民间借贷关系</mark>……</div>
+        <div class="foot"><span class="tag">支持赔偿</span><a href="#" style="color:var(--primary);font-size:13px">回溯原文 →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 回溯说明 ===== -->
+<section class="section dark">
+  <div class="wrap center">
+    <span class="eyebrow">全文不上锁，引证可回溯</span>
+    <h2 class="sec-title" style="font-size:30px">检索结果能用于呈堂吗？</h2>
+    <p class="sec-sub" style="margin:14px auto 0">判决书正文完整可读，保留真实案号可回溯中国裁判文书网原文核验，<br>引证可直接用于代理意见与呈堂材料。</p>
+    <div class="badges" style="margin-top:28px">
+      <span class="badge-chip">全文完整可读</span>
+      <span class="badge-chip">真实案号回溯</span>
+      <span class="badge-chip">引证可核验</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 报告弹窗 ===== -->
+<div class="modal-mask" id="reportModal">
+  <div class="modal">
+    <button class="close" onclick="this.parentNode.parentNode.classList.remove('show')">×</button>
+    <h3>检索报告（演示）</h3>
+    <p style="color:var(--sub);font-size:14px;margin-bottom:16px">报告将汇总勾选的案例，生成可交付的 Word / PDF 文档，含案号、法院、裁判要点与原文回链。</p>
+    <table class="tbl">
+      <tr><th>案号</th><th>法院</th><th>结果</th></tr>
+      <tr><td>(2025)粤03民终7765号</td><td>深圳市中级人民法院</td><td>部分支持</td></tr>
+      <tr><td>(2024)京0108民初28531号</td><td>北京市海淀区人民法院</td><td>支持赔偿</td></tr>
+      <tr><td>(2023)沪0115民初90212号</td><td>上海市浦东新区人民法院</td><td>部分支持</td></tr>
+    </table>
+    <div style="display:flex;gap:12px;margin-top:20px;justify-content:flex-end">
+      <button class="btn btn-outline" onclick="this.closest('.modal-mask').classList.remove('show')">返回修改</button>
+      <button class="btn btn-gold" onclick="document.getElementById('okReport').classList.add('show')">确认生成</button>
+    </div>
+    <div class="ok-box" id="okReport">报告已生成（演示）。正式版支持导出 Word / PDF 并交付客户。</div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <a class="logo" href="index.html"><span class="seal">文</span><span class="name" style="font-size:18px">文书查</span></a>
+        <p class="desc">裁判文书智能检索
++ AI 法律助手</p>
+        <p>商务 131-6872-7779</p>
+      </div>
+      <div class="col"><h4>产品</h4><ul><li><a href="case-search.html">智能检索系统</a></li><li><a href="legal-ai.html">AI 法律助手</a></li><li><a href="insight.html">类案洞察</a></li></ul></div>
+      <div class="col"><h4>机构方案</h4><ul><li><a href="onpremise.html">私有化部署</a></li><li><a href="for-gov.html">法院政府</a></li><li><a href="for-lawyers.html">律所</a></li><li><a href="for-counsel.html">企业法务</a></li><li><a href="for-devs.html">高校厂商</a></li></ul></div>
+      <div class="col"><h4>数据与开发</h4><ul><li><a href="for-devs.html">数据底座</a></li><li><a href="for-devs.html#mcp">API / MCP 文档</a></li><li><a href="https://sinoverdict.wenshucha.com/" target="_blank" rel="noopener">SinoVerdict 海外版</a></li></ul></div>
+      <div class="col"><h4>关于</h4><ul><li><a href="#">关于我们</a></li><li><a href="#">数据使用协议</a></li><li><a href="onpremise.html">联系我们</a></li></ul></div>
+    </div>
+    <div class="base">
+      <span>深圳星谱网络科技有限公司 · 粤ICP备2025437990号-2</span>
+      <span>文书查 · 裁判文书智能检索 + AI 法律助手</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.fbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.fbtn').forEach(function(x){x.classList.remove('active')});
+    this.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
